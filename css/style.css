@@ -109,8 +109,9 @@ body {
 .hero {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
-  min-height: 100svh;
+  height: 100vh;
+  height: 100svh;
+  min-height: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,7 +134,7 @@ body {
 .hero__title {
   margin: clamp(8px, 2vw, 24px) 0 0;
   font-family: var(--hand);
-  font-size: clamp(120px, 30vw, 440px);
+  font-size: clamp(100px, 24vw, 360px);
   font-weight: 400;
   line-height: 0.82;
   letter-spacing: -0.02em;
@@ -146,7 +147,7 @@ body {
   position: relative;
   z-index: 2;
   width: min(1000px, 92vw);
-  margin-top: clamp(-200px, -14vw, -60px);
+  margin-top: clamp(-70px, -3.6vw, -20px);
   flex: 1;
   min-height: 220px;
   overflow: hidden;
@@ -154,40 +155,18 @@ body {
   box-shadow: var(--shadow-xl);
 }
 
+/* The bottom of the preview is cropped by the screen edge. On very tall
+   screens the image scales up (cover) instead of leaving an empty gap. */
 .hero__preview img {
   display: block;
   width: 100%;
   height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
-/* Curved cream band at the bottom, with the CTA */
-.hero__cta {
-  position: absolute;
-  z-index: 3;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  height: clamp(190px, 26vh, 260px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: clamp(40px, 6vh, 64px);
-}
-
-.hero__cta::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: -20%;
-  width: 140%;
-  top: 0;
-  bottom: 0;
-  background: var(--canvas);
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-}
-
+/* Download pill */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -213,11 +192,20 @@ body {
   outline-offset: 3px;
 }
 
-.hero__note {
-  margin: 14px 0 0;
-  font-size: 14px;
-  line-height: 1.2;
-  color: var(--muted);
+/* Floats over the bottom of the preview image */
+.btn--float {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: clamp(20px, 4vh, 40px);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  box-shadow: var(--shadow-xl);
+}
+
+.btn__os {
+  margin-left: 2px;
+  opacity: 0.6;
 }
 
 /* ---------- Responsive ---------- */
@@ -227,7 +215,7 @@ body {
 
 @media (max-width: 600px) {
   .nav { top: 14px; }
-  .btn { height: 50px; padding: 0 22px; font-size: 17px; }
+  .btn { height: 50px; padding: 0 20px; gap: 8px; font-size: 15px; }
   .hero__preview { min-height: 160px; }
 }
 
