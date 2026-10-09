@@ -11,6 +11,7 @@
 
   --serif: "Fraunces", "Times New Roman", serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand: "Kalam", "Segoe Print", "Comic Sans MS", cursive;
 
   --radius-xs: 12px;
   --radius-full: 9999px;
@@ -131,11 +132,11 @@ body {
 
 .hero__title {
   margin: clamp(8px, 2vw, 24px) 0 0;
-  font-family: var(--serif);
+  font-family: var(--hand);
   font-size: clamp(120px, 30vw, 440px);
-  font-weight: 350;
+  font-weight: 400;
   line-height: 0.82;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   color: var(--white);
   user-select: none;
 }
