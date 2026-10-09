@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEAT</title>
+  <meta name="description" content="Focus is the new fast.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="img/neat/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- NEAT gradient background -->
+  <canvas id="gradient" aria-hidden="true"></canvas>
+
+  <!-- Navbar -->
+  <header class="nav">
+    <nav class="nav__pill" aria-label="Main">
+      <a class="nav__logo" href="#" aria-label="NEAT home">
+        <img src="img/neat/logo.png" alt="NEAT logo" width="40" height="40">
+      </a>
+      <a class="nav__link" href="#">Home</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <p class="hero__tagline">Focus is the new fast.</p>
+
+    <h1 class="hero__title" aria-label="NEAT">NEAT</h1>
+
+    <div class="hero__preview">
+      <img src="img/preview.png" alt="NEAT browser preview">
+    </div>
+
+    <div class="hero__cta">
+      <a class="btn" href="#">
+        Download NEAT for free
+        <svg class="btn__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 4v12"/>
+          <path d="m7 11 5 5 5-5"/>
+        </svg>
+      </a>
+      <p class="hero__note">Available for Windows</p>
+    </div>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
